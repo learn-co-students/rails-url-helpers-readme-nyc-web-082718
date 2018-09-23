@@ -5,4 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Post.create(title: "Test", description: "My test post")
+
+puts "Creating post..."
+if Post.find_by_title("Test Four").nil?
+  Post.create(title: "Test Four", description: "My REAL Final Test")
+  puts "Post #{Post.last.title} created"
+else
+  puts "Post with that title already exists"
+end
+
+#Post.create(title: "Test", description: "My test post")
